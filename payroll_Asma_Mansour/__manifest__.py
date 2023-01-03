@@ -18,7 +18,7 @@
     'images': ['static/description/Banner.jpg'],
     "license": "LGPL-3",
     "author": "Asma Mansour",
-    "depends": ["hr_contract", "base", "hr", "hr_holidays", "hr_payroll","hr_work_entry","account_accountant", "l10n_tunisia", ],
+    "depends": ["hr_contract", "base", "hr", "hr_holidays", "hr_payroll","hr_work_entry","account_accountant",],
     "data": [
         "views/hr_employee_views.xml",
         "views/hr_contract_views.xml",
