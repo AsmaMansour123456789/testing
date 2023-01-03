@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="payroll_report_view_dashboard_inherit" model="ir.ui.view">
+            <field name="name">payroll.report.view.dashboard</field>
+            <field name="model">hr.payroll.report</field>
+            <field name="inherit_id" ref="hr_payroll.payroll_report_view_dashboard" />
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//dashboard/group/group/group" position="inside">
+<!--                    <formula name="avg_net" string="Average Net Wage" value="record.net_wage / record.count" widget="monetary"/>-->
+<!--                    <formula name="avg_basic" string="Average Basic Wage" value="record.basic_wage / record.count" widget="monetary"/>-->
+                    <formula name="avg_tfp" string="Average TFP Wage" value="record.tfp_wage / record.count" widget="monetary"/>
+
+                    <formula name="cnss" string="CNSS" value="record.cnss / record.count" widget="monetary"/>
+                    <formula name="avg_nb_jours_travailles" string="Nombre des jours travailles" value="record.nb_jours_travailles / record.count" widget="monetary"/>
+                    <formula name="avg_prime_comp_wage" string="Prime Complémentaire" value="record.prime_comp_wage / record.count" widget="monetary"/>
+                    <formula name="avg_brut_impo_wage" string="Brut Imposable" value="record.brut_impo_wage / record.count" widget="monetary"/>
+                    <formula name="avg_foprolos_wage" string="FOPROLOS" value="record.foprolos_wage / record.count" widget="monetary"/>
+                    <formula name="avg_irpp_wage" string="IRPP" value="record.irpp_wage / record.count" widget="monetary"/>
+                    <formula name="avg_css_wage" string="CSS" value="record.css_wage / record.count" widget="monetary"/>
+                    <formula name="avg_avance" string="Avance" value="record.avance / record.count" widget="monetary"/>
+                    <formula name="avg_pret" string="Prêt" value="record.pret / record.count" widget="monetary"/>
+                    <formula name="avg_note_frais" string="Note de frais" value="record.note_frais/ record.count" widget="monetary"/>
+                    <formula name="avg_retenu_transp" string="Retenue" value="record.retenu_transp / record.count" widget="monetary"/>
+                    <formula name="avg_indem_transport" string="Indemnité de transport" value="record.indem_transport / record.count" widget="monetary"/>
+                    <formula name="avg_prime_presence" string="Prime de présence" value="record.prime_presence / record.count" widget="monetary"/>
+                    <formula name="avg_nb_jour_ferie" string="Nombre Jours Fériés" value="record.nb_jour_ferie / record.count" widget="monetary"/>
+                    <formula name="avg_jour_ferie" string="Jours Fériés" value="record.jour_ferie / record.count" widget="monetary"/>
+                    <formula name="avg_nb_jour_conge" string="Nombre Jours Congés" value="record.nb_jour_conge / record.count" widget="monetary"/>
+                    <formula name="avg_jour_conge" string="Jours Congés" value="record.jour_conge / record.count" widget="monetary"/>
+                    <formula name="avg_nb_heures_sup_100" string="Nombre des heures supplémentaires 100%" value="record.nb_heures_sup_100 / record.count" widget="monetary"/>
+                    <formula name="avg_heures_sup_100" string="Heures supplémentaires 100%" value="record.heures_sup_100 / record.count" widget="monetary"/>
+                    <formula name="avg_nb_heures_sup_175" string="Nombre des heures supplémentaires 175%" value="record.nb_heures_sup_175 / record.count" widget="monetary"/>
+                    <formula name="avg_heures_sup_175" string="Heures supplémentaires 175%" value="record.heures_sup_175 / record.count" widget="monetary"/>
+                    <formula name="avg_cnss_pat" string="CNSS Patronale" value="record.cnss_pat / record.count" widget="monetary"/>
+                    <formula name="avg_cnss_pat_avg" string="CNSS Patronale Avantage" value="record.cnss_pat_avg / record.count" widget="monetary"/>
+                    <formula name="avg_acc_trv" string="Accident de travail" value="record.acc_trv / record.count" widget="monetary"/>
+
+
+<!--                    <aggregate name="count" string="# Payslips" field="count"/>-->
+<!--                    <aggregate name="net_wage" string="Total Net Wage" field="net_wage" widget="monetary"/>-->
+<!--                    <aggregate name="basic_wage" string="Basic Wage" field="basic_wage" widget="monetary" invisible="1"/>-->
+                    <aggregate name="tfp_wage" string="Total TFP Wage" field="tfp_wage" widget="monetary"/>
+
+                    <aggregate name="cnss" string="Total CNSS" field="cnss" widget="monetary"/>
+                    <aggregate name="nb_jours_travailles" string="Total Nombre des jours travailles" field="nb_jours_travailles" widget="monetary"  invisible="0"/>
+                    <aggregate name="prime_comp_wage" string="Total Prime Complémentaire" field="prime_comp_wage" widget="monetary"/>
+                    <aggregate name="brut_impo_wage" string="Total Brut Imposable" field="brut_impo_wage" widget="monetary"/>
+                    <aggregate name="foprolos_wage" string="Total FOPROLOS" field="foprolos_wage" widget="monetary"/>
+                    <aggregate name="irpp_wage" string="Total IRPP" field="irpp_wage" widget="monetary"/>
+                    <aggregate name="css_wage" string="Total CSS" field="css_wage" widget="monetary"/>
+                    <aggregate name="avance" string="Total Avance" field="avance" widget="monetary"/>
+                    <aggregate name="pret" string="Total Prêt" field="pret" widget="monetary"/>
+                    <aggregate name="note_frais" string="Total Note de frais" field="note_frais" widget="monetary"/>
+                    <aggregate name="retenu_transp" string="Total Retenue" field="retenu_transp" widget="monetary"/>
+                    <aggregate name="indem_transport" string="Total Indemnité de transport" field="indem_transport" widget="monetary"/>
+                    <aggregate name="prime_presence" string="Total Prime de présence" field="prime_presence" widget="monetary"/>
+                    <aggregate name="nb_jour_ferie" string="Total Nombre Jours Fériés" field="nb_jour_ferie" widget="monetary"/>
+                    <aggregate name="jour_ferie" string="Total Jours Fériés" field="jour_ferie" widget="monetary"/>
+                    <aggregate name="nb_jour_conge" string="Total Nombre Jours Congés" field="nb_jour_conge" widget="monetary"/>
+                    <aggregate name="jour_conge" string="Total Jours Congés" field="jour_conge" widget="monetary"/>
+                    <aggregate name="nb_heures_sup_100" string="Total Nombre des heures supplémentaires 100%" field="nb_heures_sup_100" widget="monetary"/>
+                    <aggregate name="heures_sup_100" string="Total Heures supplémentaires 100%" field="heures_sup_100" widget="monetary"/>
+                    <aggregate name="nb_heures_sup_175" string="Total Nombre des heures supplémentaires 175%" field="nb_heures_sup_175" widget="monetary"/>
+                    <aggregate name="heures_sup_175" string="Total Heures supplémentaires 175%" field="heures_sup_175" widget="monetary"/>
+                    <aggregate name="cnss_pat" string="Total CNSS Patronale" field="cnss_pat" widget="monetary"/>
+                    <aggregate name="cnss_pat_avg" string="Total CNSS Patronale Avantage" field="cnss_pat_avg" widget="monetary"/>
+                    <aggregate name="acc_trv" string="Total Accident de travail" field="acc_trv" widget="monetary"/>
+
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
