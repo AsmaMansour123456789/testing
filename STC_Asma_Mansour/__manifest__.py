@@ -1,0 +1,33 @@
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
+{
+    "name": "STC - Tunisia",
+    "version": "15.0.1.0",
+    'description':  """Tunisian Payroll Rules Basic Version.
+    ======================
+    
+        - Configuration of hr_payroll for Tunisian localization
+        - Basic configuration for newly installed company
+        - Absence - Advances - CNSS 
+        - Important: you need to fill the wage amount for the employee in the contract and chose tunisia payroll from the structure field.
+        """,
+    "category": "Human Resources",
+    "website": "",
+    "sequence": 38,
+    "summary": "Manage your employee payroll records",
+    'images': ['static/description/Banner.jpg'],
+    "license": "LGPL-3",
+    "author": "Asma Mansour",
+    "depends": ["hr_contract", "base", "hr", "hr_holidays", "hr_payroll","hr_work_entry","account_accountant","payroll_Asma_Mansour"],
+    "data": [
+        "report/report_payslip_stc.xml",
+        "report/print.xml",
+        "data/hr_payroll_data_STC.xml",
+        "data/autre_entree.xml",
+
+
+
+
+    ],
+    "application": True,
+}
